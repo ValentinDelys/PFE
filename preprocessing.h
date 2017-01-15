@@ -1,5 +1,5 @@
-#ifndef PROCESSING_H
-#define PROCESSING_H
+#ifndef PREPROCESSING_H
+#define PREPROCESSING_H
 
 #include <opencv.hpp>
 #include <QMainWindow>
@@ -19,4 +19,4 @@ private:
 };
 
 
-#endif // PROCESSING_H
+#endif // PREPROCESSING_H

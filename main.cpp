@@ -13,8 +13,7 @@ int main(int argc, char *argv[])
     /* Select a preprocessing methode */
 //    preproc->houghCircles();
 //    preproc->fitEllipse();
-//    preproc->matchTemplate();
-//    preproc->identification();
+    preproc->matchTemplate();
 
     return a.exec();
 }

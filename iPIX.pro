@@ -24,7 +24,6 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     preprocessing.h \
-    gpxerrors.h \
     gpxerrors.h
 
 INCLUDEPATH +=  $${OPENCV_DIR}include/opencv \
