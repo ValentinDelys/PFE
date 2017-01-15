@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
     /* Select a preprocessing methode */
 //    preproc->houghCircles();
-//    preproc->fitEllipseV3();
+//    preproc->fitEllipse();
 //    preproc->matchTemplate();
 //    preproc->identification();
 
