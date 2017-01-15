@@ -20,11 +20,6 @@ void PreProcessing::houghCircles(){
     cv::Mat src, src_gray;
 
     src = imread(this->filename, cv::IMREAD_COLOR);
-    //    cv::Mat channel[3];
-    //    split(src, channel);
-    //    cv::imshow("Blue", channel[0] );
-    //    cv::imshow("Green", channel[1] );
-    //    cv::imshow("Red", channel[2] );
 
     if(!src.empty()){
         cv::imshow("Src", src);
@@ -36,10 +31,9 @@ void PreProcessing::houghCircles(){
 
         qDebug() << cv::countNonZero(src_gray);
 
-        //        cv::GaussianBlur(src_gray, src_gray, cv::Size(25, 25), 3, 3);
         cv::blur(src_gray, src_gray, cv::Size(9, 9));
 
-        //        cv::imshow("Scr Blur", src_gray);
+        cv::imshow("Scr Blur", src_gray);
 
         std::vector<cv::Vec3f> circles;
 
@@ -49,7 +43,7 @@ void PreProcessing::houghCircles(){
 
         for(size_t i = 0; i < circles.size(); i++){
             cv::Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
-            //            int radius = cvRound(circles[i][2]);
+
             int radius = cvRound(circles[i][2]) + 2;
 
             // Center
@@ -74,15 +68,6 @@ void PreProcessing::houghCircles(){
 
             sub_result.copyTo(result(cv::Rect(p1.x, p1.y, sub_result.cols, sub_result.rows)));
             cv::imshow("drawing", result);
-            //            cv::Mat sub_result(src.colRange((center.x - radius), (center.x + radius)).rowRange((center.y - radius), (center.y + radius)));
-            //            cv::cvtColor(sub_result, sub_result, cv::COLOR_BGR2GRAY);
-
-            //            sub_result.copyTo(result(cv::Rect(center.x - radius, center.y - radius, sub_result.cols, sub_result.rows)));
-            //            cv::imshow("drawing", result);
-
-            //            std::stringstream circle_name;
-            //            circle_name << "Circle " << i << " number of pixels " << cv::countNonZero(sub_result);
-            //            cv::imshow(circle_name.str(), sub_result);
         }
 
         cv::imshow("Scr Hough", drawing);

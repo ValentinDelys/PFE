@@ -1,9 +1,7 @@
 #ifndef PREPROCESSING_H
 #define PREPROCESSING_H
 
-#include <opencv.hpp>
 #include <QMainWindow>
-
 
 class PreProcessing : public QMainWindow
 {
